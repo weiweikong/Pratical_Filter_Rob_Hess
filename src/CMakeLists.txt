@@ -1,0 +1,16 @@
+ 
+cmake_minimum_required(VERSION 2.8)
+project( DisplayImage )
+
+set( SRC_LIST track1.c
+              observation.c
+              particles.c
+              utils.c)
+              
+
+#set(CMAKE_GSL_CXX_FLAGS "-g -Wall") 
+
+add_executable( track1  ${SRC_LIST} )
+target_link_libraries( track1 ${OpenCV_LIBS}
+                              gsl
+                              gslcblas)
